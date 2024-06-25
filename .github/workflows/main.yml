@@ -19,3 +19,5 @@ jobs:
         with:
           application-id: D9XXkKjEulGTnasuG924vQ-a
           # environment-id: <your-environment-id-e>
+      - name: "Show output logs"
+        run: echo "$mabl-test-deployment"
