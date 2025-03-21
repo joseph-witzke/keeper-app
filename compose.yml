@@ -1,0 +1,24 @@
+services:
+  web: 
+    build: ./
+    ports: 
+      - 3000:3000
+    develop:
+      watch:
+        - action: sync
+          path: ./src
+          target: /app
+  
+  link:
+    image: mablhq/link-agent
+    command: bin/link-agent --api-key ${API_KEY} --name joe-link
+  
+  jenkins:
+    image: jenkins/jenkins
+    ports:
+      - "8080:8080"
+    volumes:
+      - jenkins:/var/jenkins_home:rw
+
+volumes:
+  jenkins:
