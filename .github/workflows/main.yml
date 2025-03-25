@@ -1,23 +1,23 @@
-on: [push]
+# on: [push]
 
-name: mabl Simple Example
+# name: mabl Simple Example
 
-jobs:
-  test:
-    name: mabl Test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+# jobs:
+#   test:
+#     name: mabl Test
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
 
-      - name: Functional test deployment
-        id: mabl-test-deployment
-        uses: mablhq/github-run-tests-action@v1.14
-        env:
-          # Use a "CI/CD Integration" type of mabl API key
-          MABL_API_KEY: ${{ secrets.MABL_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          application-id: D9XXkKjEulGTnasuG924vQ-a
-          # environment-id: <your-environment-id-e>
-      - name: "Show output logs"
-        run: echo "$mabl-test-deployment"
+#       - name: Functional test deployment
+#         id: mabl-test-deployment
+#         uses: mablhq/github-run-tests-action@v1.14
+#         env:
+#           # Use a "CI/CD Integration" type of mabl API key
+#           MABL_API_KEY: ${{ secrets.MABL_API_KEY }}
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         with:
+#           application-id: D9XXkKjEulGTnasuG924vQ-a
+#           # environment-id: <your-environment-id-e>
+#       - name: "Show output logs"
+#         run: echo "$mabl-test-deployment"
