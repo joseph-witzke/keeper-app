@@ -6,7 +6,7 @@ function Header() {
     <header>
       <h1>
         <HighlightIcon />
-        Keeper Yo
+        Keeper Jenkins
       </h1>
     </header>
   );
